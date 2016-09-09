@@ -1,6 +1,7 @@
 # tree-test
 Простое тестовое задание на понимание алгоритмов
 ### Часто задаваемые вопросы
+
 1. *Куда писать код?* 
 
  Вам надо реализовать метод:
@@ -10,6 +11,7 @@ public static int getMaxTreeDepth(Node arbitraryNode) {
      return 0;
  }
  ```
+ Метод расположен в [`tree-test/src/app/Main.java`](https://github.com/kaluchi/tree-test/blob/master/src/app/Main.java) 
 2. *У вас ДЕРЕВО или ЛЕС?*
  
  У вас ДЕРЕВО. Корень один. 
