@@ -1,6 +1,9 @@
 package app;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Kalitko.Evgeny
  *
@@ -14,8 +17,24 @@ public class Main {
 	
 	
 	public static int getMaxTreeDepth(Node arbitraryNode) {
-		// TODO: нужно посчитать максимальную грубину дерева, в котором находится переданный узел
-		return 0;
+		return getTreeDepth(arbitraryNode);
+	}
+
+	public static int getTreeDepth(Node node) {
+		while (node.getParent() != null) {
+			node = node.getParent();
+		}
+		List<Node> level = node.getChildren();
+		int depth = 0;
+		while (level.size() > 0) {
+			List<Node> nextLevel = new ArrayList<>();
+			for (Node child : level) {
+				nextLevel.addAll(child.getChildren());
+			}
+			level = nextLevel;
+			depth++;
+		}
+		return depth;
 	}
 
 }
